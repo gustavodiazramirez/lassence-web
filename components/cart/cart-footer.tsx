@@ -34,9 +34,9 @@ export default function CartFooter({ items, totalPrice }: CartFooterProps) {
     const total = formatPrice(totalPrice);
 
     const message =
-      items.length === 1
-        ? `¡Hola! Estoy interesado en el siguiente perfume:\n\n${perfumesList}\n\n¿Me puedes ayudar con la cotización?\nTotal: ${total}`
-        : `¡Hola! Estoy interesado en los siguientes perfumes:\n\n${perfumesList}\n\n¿Me puedes ayudar con la cotización?\nTotal: ${total}`;
+      (items.length === 1
+      ? `¡Hola! Quiero finalizar la compra del siguiente perfume:\n\n${perfumesList}\n\nTotal: ${total}\n¿Me indicas los pasos para el pago y entrega?`
+      : `¡Hola! Quiero finalizar la compra de los siguientes perfumes:\n\n${perfumesList}\n\nTotal: ${total}\n¿Me indicas los pasos para el pago y entrega?`);
 
     return encodeURIComponent(message);
   };
