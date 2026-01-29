@@ -16,14 +16,14 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex justify-center">
             <div className="inline-flex items-center justify-center">
-              <span className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold bg-linear-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent font-cormorant leading-none">
+              <span className="text-[6rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold bg-linear-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent font-cormorant leading-none">
                 L
               </span>
               <div className="flex items-center -ml-2 sm:-ml-3 md:-ml-4">
-                <span className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light italic text-foreground/80 font-cormorant">
+                <span className="text-2xl sm:text-2xl md:text-4xl lg:text-5xl font-light italic text-foreground/80 font-cormorant">
                   '
                 </span>
-                <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light italic text-foreground/80 font-cormorant">
+                <span className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-light italic text-foreground/80 font-cormorant">
                   essence
                 </span>
               </div>
@@ -45,12 +45,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="#catalogo" className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-white rounded-full font-medium font-geist shadow-lg hover:shadow-xl hover:scale-105 transition-all cursor-pointer text-sm text-center">
+            className="flex flex-row gap-3 justify-center items-center">
+            <a href="#catalogo" className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-white rounded-full font-medium font-geist shadow-lg hover:shadow-xl hover:scale-105 transition-all cursor-pointer text-xs text-center">
               Explorar Catálogo
             </a>
 
-            <a href="/quiz" className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-border bg-card/50 backdrop-blur-sm text-foreground rounded-full font-medium font-geist hover:border-primary hover:bg-card transition-all cursor-pointer text-sm text-center">
+            <a href="/quiz" className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-border bg-card/50 backdrop-blur-sm text-foreground rounded-full font-medium font-geist hover:border-primary hover:bg-card transition-all cursor-pointer text-xs text-center">
               Encuentra tu Perfume
             </a>
           </motion.div>
