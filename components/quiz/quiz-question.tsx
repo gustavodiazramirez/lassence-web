@@ -42,7 +42,7 @@ export default function QuizQuestion({
         transition={{ delay: 0.1, duration: 0.5 }}
         className="text-center space-y-4 mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold font-cormorant">
+        <h1 className="text-3xl md:text-5xl font-bold font-cormorant">
           Encuentra tu Perfume Ideal
         </h1>
         <p className="text-muted-foreground font-geist">
@@ -75,7 +75,7 @@ export default function QuizQuestion({
         transition={{ duration: 0.3 }}
         className="space-y-8"
       >
-        <h2 className="text-2xl md:text-3xl font-semibold text-center font-cormorant">
+        <h2 className="text-xl md:text-3xl font-semibold text-center font-cormorant">
           {question.question}
         </h2>
 

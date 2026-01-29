@@ -8,8 +8,14 @@ import perfumes from "@/data/perfumes.json";
 
 // Función helper para obtener la extensión correcta de la imagen
 const getImagePath = (id: string) => {
-  const pngImages = ["ysl-black-opium-over-red", "jpg-le-beau-le-parfum", "versace-eros-flame"];
-  return pngImages.includes(id) ? `/perfumes/${id}.png` : `/perfumes/${id}.jpeg`;
+  const pngImages = [
+    "ysl-black-opium-over-red",
+    "jpg-le-beau-le-parfum",
+    "versace-eros-flame",
+  ];
+  return pngImages.includes(id)
+    ? `/perfumes/${id}.png`
+    : `/perfumes/${id}.jpeg`;
 };
 
 type Answer = {
@@ -86,7 +92,7 @@ const questions: Question[] = [
 ];
 
 // Sistema de scoring para cada perfume basado en las respuestas
-function calculateMatch(answers: Answer[]): typeof perfumes[0] | null {
+function calculateMatch(answers: Answer[]): (typeof perfumes)[0] | null {
   const answerMap = new Map(answers.map((a) => [a.questionId, a.value]));
 
   const scores = perfumes.map((perfume) => {
@@ -163,14 +169,29 @@ function calculateMatch(answers: Answer[]): typeof perfumes[0] | null {
     if (season) {
       // Perfumes frescos para verano
       if (season === "summer") {
-        if (["jpg-le-beau-le-parfum", "armani-acqua-di-gio-parfum", "ysl-y-edp", "valentino-coral-fantasy"].includes(perfume.id)) {
+        if (
+          [
+            "jpg-le-beau-le-parfum",
+            "armani-acqua-di-gio-parfum",
+            "ysl-y-edp",
+            "valentino-coral-fantasy",
+          ].includes(perfume.id)
+        ) {
           score += 20;
         }
       }
 
       // Perfumes intensos para invierno
       if (season === "winter") {
-        if (["jpg-le-male-le-parfum", "valentino-intense", "versace-eros-flame", "ysl-black-opium-over-red", "lancome-la-vie-est-belle"].includes(perfume.id)) {
+        if (
+          [
+            "jpg-le-male-le-parfum",
+            "valentino-intense",
+            "versace-eros-flame",
+            "ysl-black-opium-over-red",
+            "lancome-la-vie-est-belle",
+          ].includes(perfume.id)
+        ) {
           score += 20;
         }
       }
@@ -185,19 +206,36 @@ function calculateMatch(answers: Answer[]): typeof perfumes[0] | null {
     const intensity = answerMap.get("intensity") as string;
     if (intensity) {
       if (intensity === "light") {
-        if (["armani-acqua-di-gio-parfum", "ysl-y-edp", "valentino-coral-fantasy"].includes(perfume.id)) {
+        if (
+          [
+            "armani-acqua-di-gio-parfum",
+            "ysl-y-edp",
+            "valentino-coral-fantasy",
+          ].includes(perfume.id)
+        ) {
           score += 15;
         }
       }
 
       if (intensity === "moderate") {
-        if (["jpg-le-beau-le-parfum", "lancome-la-vie-est-belle"].includes(perfume.id)) {
+        if (
+          ["jpg-le-beau-le-parfum", "lancome-la-vie-est-belle"].includes(
+            perfume.id,
+          )
+        ) {
           score += 15;
         }
       }
 
       if (intensity === "strong") {
-        if (["jpg-le-male-le-parfum", "valentino-intense", "versace-eros-flame", "ysl-black-opium-over-red"].includes(perfume.id)) {
+        if (
+          [
+            "jpg-le-male-le-parfum",
+            "valentino-intense",
+            "versace-eros-flame",
+            "ysl-black-opium-over-red",
+          ].includes(perfume.id)
+        ) {
           score += 15;
         }
       }
@@ -211,11 +249,14 @@ function calculateMatch(answers: Answer[]): typeof perfumes[0] | null {
         if (pref === "fresh" && perfume.family.includes("fresco")) score += 3;
         if (pref === "sweet" && perfume.family.includes("gourmand")) score += 3;
         if (pref === "floral" && perfume.family.includes("floral")) score += 3;
-        if (pref === "woody" && perfume.family.includes("amaderado")) score += 3;
+        if (pref === "woody" && perfume.family.includes("amaderado"))
+          score += 3;
         if (pref === "spicy" && perfume.family.includes("oriental")) score += 3;
-        if (pref === "spicy" && perfume.family.includes("especiado")) score += 3;
+        if (pref === "spicy" && perfume.family.includes("especiado"))
+          score += 3;
         if (pref === "fruity" && perfume.family.includes("frutal")) score += 3;
-        if (pref === "fruity" && perfume.family.includes("tropical")) score += 3;
+        if (pref === "fruity" && perfume.family.includes("tropical"))
+          score += 3;
       });
     }
 
@@ -231,7 +272,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-  const [result, setResult] = useState<typeof perfumes[0] | null>(null);
+  const [result, setResult] = useState<(typeof perfumes)[0] | null>(null);
   const [showResult, setShowResult] = useState(false);
 
   const question = questions[currentQuestion];
@@ -256,7 +297,8 @@ export default function QuizPage() {
       ...answers,
       {
         questionId: question.id,
-        value: question.type === "single" ? selectedOptions[0] : selectedOptions,
+        value:
+          question.type === "single" ? selectedOptions[0] : selectedOptions,
       },
     ];
 
@@ -278,7 +320,7 @@ export default function QuizPage() {
       setCurrentQuestion(currentQuestion - 1);
       const prevAnswer = answers[currentQuestion - 1];
       setSelectedOptions(
-        Array.isArray(prevAnswer.value) ? prevAnswer.value : [prevAnswer.value]
+        Array.isArray(prevAnswer.value) ? prevAnswer.value : [prevAnswer.value],
       );
       setAnswers(answers.slice(0, -1));
     }
@@ -306,13 +348,23 @@ export default function QuizPage() {
           className="fixed top-6 left-6 z-50 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
           aria-label="Volver al inicio"
         >
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
           </svg>
         </motion.a>
         <div className="container mx-auto px-4 pt-32 pb-20 max-w-3xl flex items-center justify-center min-h-screen">
-          <QuizResult 
-            result={result} 
+          <QuizResult
+            result={result}
             onRestart={handleRestart}
             getImagePath={getImagePath}
           />
@@ -334,11 +386,21 @@ export default function QuizPage() {
         className="fixed top-6 left-6 z-50 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
         aria-label="Volver al inicio"
       >
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
         </svg>
       </motion.a>
-      <div className="container mx-auto px-4 pt-32 pb-20 max-w-2xl flex flex-col justify-center min-h-screen">
+      <div className="container mx-auto px-6 pt-32 pb-20 max-w-2xl flex flex-col justify-center min-h-screen">
         <QuizQuestion
           question={question}
           currentQuestion={currentQuestion}
