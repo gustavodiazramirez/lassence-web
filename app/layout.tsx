@@ -23,7 +23,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "L'Essence - Decants de Perfumes de Diseñador",
+  title: "L'essence - Decants de Perfumes de Diseñador",
   description: "Descubre tu fragancia perfecta con nuestra selección de decants de perfumes de diseñador",
 };
 

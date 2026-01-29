@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const brands = [
   "Jean Paul Gaultier",
   "Valentino",
@@ -11,18 +13,22 @@ const brands = [
 
 export default function BrandCarousel() {
   return (
-    <div className="w-full overflow-hidden bg-card/30 backdrop-blur-sm border-y border-border py-6 sm:py-8">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+      className="w-full overflow-hidden bg-card/30 backdrop-blur-sm border-y border-border py-6 sm:py-8">
       <div className="flex animate-scroll gap-12 sm:gap-16">
         {/* Duplicamos el array para crear el efecto de loop infinito */}
         {[...brands, ...brands, ...brands, ...brands].map((brand, index) => (
           <span
             key={`${brand}-${index}`}
-            className="text-xl sm:text-2xl font-light text-muted-foreground whitespace-nowrap font-[family-name:var(--font-cormorant)] italic"
+            className="text-xl sm:text-2xl font-light text-muted-foreground whitespace-nowrap font-cormorant italic"
           >
             {brand}
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

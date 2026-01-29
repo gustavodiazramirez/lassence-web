@@ -9,7 +9,7 @@
   --border: #e7e5e4;
   --muted: #78716c;
   --muted-foreground: #57534e;
-  --button-inactive: #3c3c3c;
+  --button-inactive: #d5d5d5;
   --button-inactive-foreground: #78716c;
 }
 
@@ -53,6 +53,19 @@ body {
 body > * {
   position: relative;
   z-index: 1;
+}
+
+/* Clases de fuentes personalizadas */
+.font-geist {
+  font-family: var(--font-geist), sans-serif;
+}
+
+.font-unbounded {
+  font-family: var(--font-unbounded), sans-serif;
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant), serif;
 }
 
 /* Cursor pointer para botones */

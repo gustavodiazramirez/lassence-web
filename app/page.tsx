@@ -3,6 +3,9 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Catalog from "@/components/catalog";
+import DeliverySection from "@/components/delivery-section";
+import FAQSection from "@/components/faq-section";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -10,6 +13,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Catalog />
+      <DeliverySection />
+      <FAQSection />
+      <Footer />
     </div>
   );
 }

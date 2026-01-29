@@ -65,12 +65,7 @@
     "brand": "Yves Saint Laurent",
     "category": "masculino",
     "family": ["fresco", "amaderado"],
-    "notes": [
-      "bergamota",
-      "jengibre",
-      "salvia",
-      "vetiver"
-    ],
+    "notes": ["bergamota", "jengibre", "salvia", "vetiver"],
     "prices": [
       { "ml": 5, "price": 8990 },
       { "ml": 10, "price": 14990 }
@@ -116,9 +111,7 @@
       "sándalo",
       "musgo de roble"
     ],
-    "prices": [
-      { "ml": 5, "price": 7990 }
-    ]
+    "prices": [{ "ml": 5, "price": 7990 }]
   },
   {
     "id": "ysl-black-opium-over-red",

@@ -7,9 +7,10 @@ import { useCart } from "@/context/cart-context";
 import CartSidebar from "./cart-sidebar";
 
 const NAV_LINKS = [
-  { href: "#catalogo", label: "Catálogo" },
-  { href: "#encuentra", label: "Encuentra tu Perfume" },
-  { href: "#sobre", label: "Sobre Nosotros" },
+  { href: "/#catalogo", label: "Catálogo" },
+  { href: "/quiz", label: "Encuentra tu Perfume" },
+  { href: "/#entregas", label: "Entregas" },
+  { href: "/#faq", label: "Preguntas Frecuentes" },
 ];
 
 export default function Navbar() {
@@ -102,15 +103,15 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a
-              href="#hero"
+              href="/"
               className="flex items-center gap-3 shrink-0 group"
             >
               <div className="w-10 lg:w-11 h-10 lg:h-11 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary group-hover:ring-primary/40 transition-all">
-                <span className="font-[family-name:var(--font-cormorant)] text-white text-xl font-bold italic">
+                <span className="font-cormorant text-white text-xl font-bold italic">
                   L
                 </span>
               </div>
-              <span className="font-[family-name:var(--font-cormorant)] font-semibold text-foreground text-lg italic">
+              <span className="font-cormorant font-semibold text-foreground text-lg italic">
                 L&apos;essence
               </span>
             </a>
@@ -130,7 +131,7 @@ export default function Navbar() {
                   }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium font-[family-name:var(--font-geist)]"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium font-geist"
                 >
                   {label}
                 </motion.a>
@@ -155,27 +156,11 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
                 {getTotalItems() > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-xs font-bold rounded-full flex items-center justify-center font-[family-name:var(--font-geist)] pointer-events-none">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-xs font-bold rounded-full flex items-center justify-center font-geist pointer-events-none">
                     {getTotalItems()}
                   </span>
                 )}
               </motion.button>
-              
-              <motion.a
-                href="#contacto"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.4, 
-                  delay: 0.3,
-                  ease: "easeOut"
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-primary hover:bg-primary/90 text-white px-4 lg:px-5 py-2 rounded-full transition-all text-sm font-medium shadow-md hover:shadow-lg whitespace-nowrap font-[family-name:var(--font-geist)]"
-              >
-                Contacto
-              </motion.a>
               <ThemeToggle />
             </div>
           </div>
@@ -192,7 +177,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-[60] md:hidden"
+              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-60 md:hidden"
               onClick={closeSidebar}
             />
 
@@ -202,18 +187,18 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-72 bg-card border-l border-border shadow-2xl z-[70] md:hidden"
+              className="fixed top-0 right-0 h-full w-72 bg-card border-l border-border shadow-2xl z-70 md:hidden"
             >
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-border">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary">
-                      <span className="font-[family-name:var(--font-cormorant)] text-white text-xl font-bold italic">
+                      <span className="font-cormorant text-white text-xl font-bold italic">
                         L
                       </span>
                     </div>
-                    <span className="font-[family-name:var(--font-cormorant)] font-semibold text-foreground text-lg italic">
+                    <span className="font-cormorant font-semibold text-foreground text-lg italic">
                       L&apos;essence
                     </span>
                   </div>
@@ -235,23 +220,19 @@ export default function Navbar() {
                       key={href}
                       href={href}
                       onClick={closeSidebar}
-                      className="block px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all font-[family-name:var(--font-geist)] font-medium"
+                      className="block px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all font-geist font-medium"
                     >
                       {label}
                     </a>
                   ))}
-                  <a
-                    href="#contacto"
-                    onClick={closeSidebar}
-                    className="block px-4 py-3 bg-primary text-white hover:bg-primary/90 rounded-lg transition-all font-[family-name:var(--font-geist)] font-medium text-center mt-4"
-                  >
-                    Contacto
-                  </a>
                 </nav>
 
                 {/* Footer */}
-                <div className="p-6 border-t border-border">
-                  <p className="text-xs text-muted-foreground text-center font-[family-name:var(--font-geist)]">
+                <div className="p-6 border-t border-border space-y-4">
+                  <div className="flex items-center justify-center">
+                    <ThemeToggle />
+                  </div>
+                  <p className="text-xs text-muted-foreground text-center font-geist">
                     © 2026 L&apos;essence
                   </p>
                 </div>

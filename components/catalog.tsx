@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import ProductCard from "./product-card";
 import perfumesData from "@/data/perfumes.json";
 
@@ -21,16 +22,21 @@ export default function Catalog() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-3xl mx-auto text-center mb-16 space-y-6">
           <div>
             <span className="text-primary font-medium text-sm tracking-wider uppercase">
               Nuestra Colección
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground font-[family-name:var(--font-cormorant)] mt-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground font-cormorant mt-2">
               Descubre fragancias exclusivas
             </h2>
           </div>
-          <p className="text-muted-foreground text-lg font-[family-name:var(--font-geist)] leading-relaxed">
+          <p className="text-muted-foreground text-lg font-geist leading-relaxed">
             Cada perfume es cuidadosamente seleccionado de las mejores casas de
             alta perfumería. Experimenta el lujo en porciones perfectas sin
             comprometer la calidad.
@@ -52,12 +58,20 @@ export default function Catalog() {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Grid de productos */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {filteredProducts.map((product, index) => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+            >
+              <ProductCard product={product} />
+            </motion.div>
           ))}
         </div>
 
@@ -70,39 +84,6 @@ export default function Catalog() {
           </div>
         )}
 
-        {/* Stats section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-border">
-          <div className="text-center">
-            <p className="text-4xl font-bold text-foreground font-[family-name:var(--font-cormorant)]">
-              {perfumesData.length}+
-            </p>
-            <p className="text-muted-foreground mt-2 text-sm">
-              Fragancias exclusivas
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="text-4xl font-bold text-foreground font-[family-name:var(--font-cormorant)]">
-              100%
-            </p>
-            <p className="text-muted-foreground mt-2 text-sm">Originales</p>
-          </div>
-          <div className="text-center">
-            <p className="text-4xl font-bold text-foreground font-[family-name:var(--font-cormorant)]">
-              24/7
-            </p>
-            <p className="text-muted-foreground mt-2 text-sm">
-              Atención al cliente
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="text-4xl font-bold text-foreground font-[family-name:var(--font-cormorant)]">
-              5★
-            </p>
-            <p className="text-muted-foreground mt-2 text-sm">
-              Calificación promedio
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
