@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --primary: #890000;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --border: #e7e5e4;
+  --muted: #78716c;
+  --muted-foreground: #57534e;
+  --button-inactive: #3c3c3c;
+  --button-inactive-foreground: #78716c;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafaf9;
+  --primary: #890000;
+  --card: rgba(23, 23, 23, 0.6);
+  --card-foreground: #fafaf9;
+  --border: rgba(137, 0, 0, 0.15);  
+  --muted: #a8a29e;
+  --muted-foreground: #d6d3d1;
+  --button-inactive: #333333;
+  --button-inactive-foreground: #a8a29e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-button-inactive: var(--button-inactive);
+  --color-button-inactive-foreground: var(--button-inactive-foreground);
+  
+  --font-sans: var(--font-geist);
+  --font-heading: var(--font-unbounded);
+  --font-display: var(--font-cormorant);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist), sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cursor pointer para botones */
+button {
+  cursor: pointer;
+}
+
+/* Animación del carousel de marcas */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }

@@ -1,0 +1,186 @@
+[
+  {
+    "id": "jpg-le-male-le-parfum",
+    "name": "Le Male Le Parfum",
+    "brand": "Jean Paul Gaultier",
+    "category": "masculino",
+    "family": ["oriental", "amaderado"],
+    "notes": [
+      "cardamomo",
+      "lavanda",
+      "iris",
+      "vainilla",
+      "notas orientales",
+      "notas amaderadas"
+    ],
+    "prices": [
+      { "ml": 5, "price": 7990 },
+      { "ml": 10, "price": 13990 }
+    ]
+  },
+  {
+    "id": "jpg-le-beau-le-parfum",
+    "name": "Le Beau Le Parfum",
+    "brand": "Jean Paul Gaultier",
+    "category": "masculino",
+    "family": ["amaderado", "ámbar", "tropical"],
+    "notes": [
+      "piña",
+      "iris",
+      "jengibre",
+      "ciprés",
+      "coco",
+      "sándalo",
+      "ámbar",
+      "ámbar gris",
+      "haba tonka"
+    ],
+    "prices": [
+      { "ml": 5, "price": 8990 },
+      { "ml": 10, "price": 15990 }
+    ]
+  },
+  {
+    "id": "valentino-intense",
+    "name": "Valentino Intense",
+    "brand": "Valentino",
+    "category": "masculino",
+    "family": ["oriental", "cuero"],
+    "notes": [
+      "mandarina",
+      "esclarea",
+      "iris",
+      "haba tonka",
+      "vainilla",
+      "cuero"
+    ],
+    "prices": [
+      { "ml": 5, "price": 9990 },
+      { "ml": 10, "price": 18990 }
+    ]
+  },
+  {
+    "id": "ysl-y-edp",
+    "name": "Y Eau de Parfum",
+    "brand": "Yves Saint Laurent",
+    "category": "masculino",
+    "family": ["fresco", "amaderado"],
+    "notes": [
+      "bergamota",
+      "jengibre",
+      "salvia",
+      "vetiver"
+    ],
+    "prices": [
+      { "ml": 5, "price": 8990 },
+      { "ml": 10, "price": 14990 }
+    ]
+  },
+  {
+    "id": "armani-acqua-di-gio-parfum",
+    "name": "Acqua di Giò Parfum",
+    "brand": "Giorgio Armani",
+    "category": "masculino",
+    "family": ["acuático", "amaderado"],
+    "notes": [
+      "notas marinas",
+      "bergamota",
+      "romero",
+      "esclarea",
+      "geranio",
+      "incienso",
+      "pachulí"
+    ],
+    "prices": [
+      { "ml": 5, "price": 7990 },
+      { "ml": 10, "price": 11990 }
+    ]
+  },
+  {
+    "id": "versace-eros-flame",
+    "name": "Eros Flame",
+    "brand": "Versace",
+    "category": "masculino",
+    "family": ["amaderado", "especiado"],
+    "notes": [
+      "mandarina",
+      "limón",
+      "pimienta",
+      "romero",
+      "geranio",
+      "rosa",
+      "vainilla",
+      "haba tonka",
+      "cedro",
+      "pachulí",
+      "sándalo",
+      "musgo de roble"
+    ],
+    "prices": [
+      { "ml": 5, "price": 7990 }
+    ]
+  },
+  {
+    "id": "ysl-black-opium-over-red",
+    "name": "Black Opium Over Red",
+    "brand": "Yves Saint Laurent",
+    "category": "femenino",
+    "family": ["oriental", "gourmand"],
+    "notes": [
+      "pera",
+      "canela",
+      "mandarina verde",
+      "jazmín",
+      "flor de azahar",
+      "vainilla",
+      "pachulí",
+      "cedro"
+    ],
+    "prices": [
+      { "ml": 5, "price": 8990 },
+      { "ml": 10, "price": 16990 }
+    ]
+  },
+  {
+    "id": "lancome-la-vie-est-belle",
+    "name": "La Vie Est Belle",
+    "brand": "Lancôme",
+    "category": "femenino",
+    "family": ["floral", "gourmand"],
+    "notes": [
+      "grosella negra",
+      "pera",
+      "iris",
+      "jazmín",
+      "flor de azahar",
+      "praliné",
+      "vainilla",
+      "pachulí",
+      "haba tonka"
+    ],
+    "prices": [
+      { "ml": 5, "price": 7990 },
+      { "ml": 10, "price": 13990 }
+    ]
+  },
+  {
+    "id": "valentino-coral-fantasy",
+    "name": "Coral Fantasy",
+    "brand": "Valentino",
+    "category": "femenino",
+    "family": ["floral", "frutal"],
+    "notes": [
+      "kiwi",
+      "naranja brasileña",
+      "jazmín",
+      "rosa",
+      "almizcle ambreta",
+      "almizcle blanco",
+      "cedro"
+    ],
+    "prices": [
+      { "ml": 5, "price": 9990 },
+      { "ml": 10, "price": 16990 }
+    ]
+  }
+]
